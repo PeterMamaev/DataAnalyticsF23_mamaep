@@ -176,6 +176,7 @@ library(dplyr)
 data_sl <- na.omit(modernepi_data$ENVHEALTH)
 shapiro.test(data_sl)
 
+# Omitting the NA values from the 2010 EPI data to compress it to a size where the Shapiro-Wilks can be performed.
 data_sl2 <- na.omit(modernepi_data$ECOSYSTEM)
 shapiro.test(data_sl2)
 
@@ -194,4 +195,5 @@ nrow(modernepi_data)
 modernepi_data <- filter(modernepi_data, !is.na(EPI))
 nrow(modernepi_data)
 shapiro.test(modernepi_data$ENVHEALTH)
+shapiro.test(modernepi_data$ECOSYSTEM)
 
